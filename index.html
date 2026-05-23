@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rumah Belajar Fairel</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #eef2f3, #dfe9f3);
+}
+
+/* HEADER */
+header {
+    background: #3402fd;
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 20px;
+}
+
+header p {
+    font-size: 14px;
+}
+
+/* CONTAINER */
+.container {
+    padding: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 15px;
+}
+
+/* CARD */
+.card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* IMAGE */
+.card img {
+    width: 100%;
+    height: 120px;
+    object-fit: contain;
+    background-color: #ffffff;
+    padding: 5px;
+}
+
+/* TITLE */
+.card-title {
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    background: #3498db;
+    color: white;
+    text-align: center;
+}
+
+/* DROPDOWN */
+.dropdown {
+    display: none;
+    padding: 10px;
+}
+
+.dropdown a {
+    display: block;
+    padding: 10px;
+    margin: 5px 0;
+    text-decoration: none;
+    color: #333;
+    background: #ecf0f1;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.dropdown a:hover {
+    background: #d0e6f7;
+}
+
+/* ACTIVE */
+.active .dropdown {
+    display: block;
+}
+
+/* 📱 KHUSUS HP KECIL */
+@media (max-width: 480px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .card img {
+        height: 100px;
+    }
+
+    .card-title {
+        font-size: 15px;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<header>
+    <h1>Rumah Belajar Fairel</h1>
+    <p>Pilih Mata Pelajaran SMP</p>
+</header>
+
+<div class="container">
+
+    <!-- MATEMATIKA -->
+    <div class="card">
+        <img src="mtk.png">
+        <div class="card-title" onclick="toggle(this)">Matematika</div>
+        <div class="dropdown">
+            <a href="https://www.youtube.com/watch?v=xoHt137BXJE">Aljabar</a>
+            <a href="#">Bangun Datar</a>
+            <a href="#">Bangun Ruang</a>
+        </div>
+    </div>
+
+    <!-- IPA -->
+    <div class="card">
+        <img src="ipa.png">
+        <div class="card-title" onclick="toggle(this)">IPA</div>
+        <div class="dropdown">
+            <a href="#">Fisika</a>
+            <a href="#">Biologi</a>
+            <a href="#">Kimia</a>
+        </div>
+    </div>
+
+    <!-- BAHASA INDONESIA -->
+    <div class="card">
+        <img src="b indo.png">
+        <div class="card-title" onclick="toggle(this)">Bahasa Indonesia</div>
+        <div class="dropdown">
+            <a href="#">Teks Cerita</a>
+            <a href="#">Puisi</a>
+            <a href="#">Pidato</a>
+        </div>
+    </div>
+
+    <!-- IPS -->
+    <div class="card">
+        <img src="ips.png">
+        <div class="card-title" onclick="toggle(this)">IPS</div>
+        <div class="dropdown">
+            <a href="#">Sejarah</a>
+            <a href="#">Geografi</a>
+            <a href="#">Ekonomi</a>
+        </div>
+    </div>
+
+    <!-- BAHASA INGGRIS -->
+    <div class="card">
+        <img src="b ing.png">
+        <div class="card-title" onclick="toggle(this)">Bahasa Inggris</div>
+        <div class="dropdown">
+            <a href="#">Grammar</a>
+            <a href="#">Reading</a>
+            <a href="#">Conversation</a>
+        </div>
+    </div>
+
+</div>
+
+<script>
+function toggle(element) {
+    let card = element.parentElement;
+    card.classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
