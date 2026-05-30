@@ -189,8 +189,16 @@ header p {
 
 <script>
 function toggle(element) {
-    let card = element.parentElement;
-    card.classList.toggle("active");
+    let allCards = document.querySelectorAll(".card");
+
+    // Tutup semua dropdown
+    allCards.forEach(card => {
+        card.classList.remove("active");
+    });
+
+    // Buka yang diklik
+    let currentCard = element.parentElement;
+    currentCard.classList.add("active");
 }
 </script>
 
